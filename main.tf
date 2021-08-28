@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "google" {
-  version = "3.5.0"
+  version = "2.13.0"
 
   project = "tranquil-sunup-322211"
   region  = "us-central1"
