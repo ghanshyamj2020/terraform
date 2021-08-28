@@ -72,5 +72,5 @@ resource "google_compute_instance" "dev" {
       nat_ip = google_compute_address.static.address
     }
   }
-
+}
   
