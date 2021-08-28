@@ -34,11 +34,3 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 }
-resource "docker_container" "nginx-server" {
-  name = "nginx-server-1"
-  image = docker_image.nginx.latest
-  ports {
-    internal = 80
-    external = 9292
-  }
-}
