@@ -69,7 +69,7 @@ resource "google_compute_instance" "dev" {
 
     # assigning the reserved public IP to this instance
     access_config {
-      nat_ip = google_compute_address.static.address
+      
     }
   }
 }
