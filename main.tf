@@ -34,12 +34,6 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 }
-
-provider "docker" {}
-resource "docker_image" "nginx" {
-  name         = "nginx:1.11-alpine"
-  keep_locally = true
-}
 resource "docker_container" "nginx-server" {
   name = "nginx-server-1"
   image = docker_image.nginx.latest
