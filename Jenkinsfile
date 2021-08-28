@@ -13,6 +13,7 @@ pipeline {
         stage('Test'){
             steps {
                 sh 'ls'
+                sh 'pwd'
                  
             }
         }
