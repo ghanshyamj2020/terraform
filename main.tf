@@ -48,6 +48,10 @@ resource "google_compute_address" "static" {
   depends_on = [ google_compute_firewall.firewall ]
 }
 
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
+}
+
 
 resource "google_compute_instance" "dev" {
   name         = "devserver" # name of the server
