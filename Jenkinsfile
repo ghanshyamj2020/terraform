@@ -8,7 +8,7 @@ pipeline {
             steps { 
                 sh 'ls' 
                 sh 'pwd'
-                sh 'terraform -help'         
+                    
                 
             }
         }
