@@ -34,3 +34,24 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 }
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "~> 2.13.0"
+    }
+  }
+}
+provider "docker" {}
+resource "docker_image" "nginx" {
+  name         = "nginx:1.11-alpine"
+  keep_locally = true
+}
+resource "docker_container" "nginx-server" {
+  name = "nginx-server-1"
+  image = docker_image.nginx.latest
+  ports {
+    internal = 80
+    external = 9292
+  }
+}
