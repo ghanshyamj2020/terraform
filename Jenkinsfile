@@ -8,6 +8,7 @@ pipeline {
             steps { 
                 sh 'ls' 
                 sh 'pwd'
+                sh 'terraform destroy --auto-approve'
                     
                 
             }
@@ -30,7 +31,7 @@ pipeline {
         stage('Destroy') {
             steps {
                 sh 'ls'
-                
+                sh 'terraform destroy --auto-approve'
             }    
         }
     }
